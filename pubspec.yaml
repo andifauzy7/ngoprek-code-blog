@@ -1,0 +1,27 @@
+name: ngoprek_code_blog
+description: "blog project from NgoprekCode"
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  # State Management.
+  get: ^4.6.6
+  # Remote Fonts.
+  google_fonts: ^6.2.1
+  # Offline / Online Network Image
+  cached_network_image: ^3.4.0
+  # Loading State
+  shimmer: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
