@@ -5,6 +5,7 @@ import 'package:ngoprek_code_blog/responsive.dart';
 import 'package:ngoprek_code_blog/utils/menu.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_post.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_menu.dart';
+import 'package:ngoprek_code_blog/views/main/main_page.dart';
 import 'package:ngoprek_code_blog/views/widgets/app_logo.dart';
 
 class HeaderController extends GetxController {
@@ -18,6 +19,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HeaderController());
+    final mainController = Get.find<MainController>();
     return SizedBox(
       width: double.infinity,
       child: SafeArea(
@@ -38,7 +40,9 @@ class Header extends StatelessWidget {
                               ),
                               child: IconButton(
                                 icon: const Icon(Icons.menu),
-                                onPressed: () {},
+                                onPressed: () {
+                                  mainController.openCloseDrawer();
+                                },
                               ),
                             ),
                       (Responsive.isDesktop(context))
