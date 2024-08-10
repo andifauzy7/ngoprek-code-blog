@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:ngoprek_code_blog/constants.dart';
 import 'package:ngoprek_code_blog/responsive.dart';
 import 'package:ngoprek_code_blog/utils/menu.dart';
+import 'package:ngoprek_code_blog/views/header/widgets/header_about.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_post.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_menu.dart';
 import 'package:ngoprek_code_blog/views/main/main_page.dart';
@@ -126,7 +127,12 @@ class Header extends StatelessWidget {
               )
             : const SizedBox.shrink();
       case Menu.about:
-        return const SizedBox.shrink();
+        return const Padding(
+          padding: EdgeInsets.only(
+            top: kDefaultPadding,
+          ),
+          child: HeaderAbout(),
+        );
       case Menu.contact:
         return const SizedBox.shrink();
     }
