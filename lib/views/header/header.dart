@@ -73,11 +73,13 @@ class Header extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                       left: kDefaultPadding * 0.5,
                                     ),
-                                    child: Switch(
-                                      value: controller.isLightMode.value,
-                                      onChanged: (isLightMode) =>
-                                          controller.isLightMode(
-                                        isLightMode,
+                                    child: Obx(
+                                      () => Switch(
+                                        value: controller.isLightMode.value,
+                                        onChanged: (isLightMode) =>
+                                            controller.isLightMode(
+                                          isLightMode,
+                                        ),
                                       ),
                                     ),
                                   )
