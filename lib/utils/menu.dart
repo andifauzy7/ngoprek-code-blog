@@ -1,4 +1,4 @@
-enum Menu { home, about, contact }
+enum Menu { home, about, creator }
 
 extension MenuExt on Menu {
   String get label {
@@ -7,8 +7,8 @@ extension MenuExt on Menu {
         return 'Home';
       case Menu.about:
         return 'About';
-      case Menu.contact:
-        return 'Contact';
+      case Menu.creator:
+        return 'Creator';
     }
   }
 }

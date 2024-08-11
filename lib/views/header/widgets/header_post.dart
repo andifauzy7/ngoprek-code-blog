@@ -8,48 +8,51 @@ class HeaderPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppNetworkImage(
-      aspectRatio: 1200 / 450,
-      imageUrl:
-          "https://m-cdn.phonearena.com/images/hub/290-wide-two_1200/Android-14-release-date-supported-devices-and-must-know-features.jpg",
-      alignment: Alignment.bottomLeft,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const AppChip(label: 'Flutter'),
-          const SizedBox(height: kDefaultPadding * 0.5),
-          Text(
-            'The Impact of Technology on the\nWorkplace: How Technology is Changing.',
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                  backgroundColor: kPrimaryColor.withOpacity(
-                    0.3,
+    return Padding(
+      padding: const EdgeInsets.only(top: kDefaultPadding),
+      child: AppNetworkImage(
+        aspectRatio: 1200 / 450,
+        imageUrl:
+            "https://m-cdn.phonearena.com/images/hub/290-wide-two_1200/Android-14-release-date-supported-devices-and-must-know-features.jpg",
+        alignment: Alignment.bottomLeft,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const AppChip(label: 'Flutter'),
+            const SizedBox(height: kDefaultPadding * 0.5),
+            Text(
+              'The Impact of Technology on the\nWorkplace: How Technology is Changing.',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    backgroundColor: kPrimaryColor.withOpacity(
+                      0.3,
+                    ),
+                    color: Colors.white,
                   ),
-                  color: Colors.white,
+            ),
+            const SizedBox(height: kDefaultPadding * 0.5),
+            Row(
+              children: [
+                Text(
+                  'Andi Fauzy Dewantara',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Colors.white,
+                      ),
                 ),
-          ),
-          const SizedBox(height: kDefaultPadding * 0.5),
-          Row(
-            children: [
-              Text(
-                'Andi Fauzy Dewantara',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.white,
-                    ),
-              ),
-              const SizedBox(width: kDefaultPadding),
-              Text(
-                'August 20, 2024',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.white,
-                    ),
-              ),
-            ],
-          ),
-        ],
+                const SizedBox(width: kDefaultPadding),
+                Text(
+                  'August 20, 2024',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

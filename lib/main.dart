@@ -22,6 +22,21 @@ class MyApp extends StatelessWidget {
           backgroundColor: kPrimaryColor,
           side: BorderSide(color: kPrimaryColor),
         ),
+        outlinedButtonTheme: const OutlinedButtonThemeData(
+          style: ButtonStyle(
+            side: WidgetStatePropertyAll(
+              BorderSide(
+                color: kPrimaryColor,
+              ),
+            ),
+            foregroundColor: WidgetStatePropertyAll(
+              kPrimaryColor,
+            ),
+          ),
+        ),
+        dividerTheme: const DividerThemeData(
+          color: Colors.black12,
+        ),
         inputDecorationTheme: InputDecorationTheme(
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(6),

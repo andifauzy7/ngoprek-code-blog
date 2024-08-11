@@ -4,6 +4,7 @@ import 'package:ngoprek_code_blog/constants.dart';
 import 'package:ngoprek_code_blog/responsive.dart';
 import 'package:ngoprek_code_blog/utils/menu.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_about.dart';
+import 'package:ngoprek_code_blog/views/header/widgets/header_contact.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_post.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_menu.dart';
 import 'package:ngoprek_code_blog/views/main/main_page.dart';
@@ -119,22 +120,12 @@ class Header extends StatelessWidget {
     switch (menu) {
       case Menu.home:
         return !Responsive.isMobile(context)
-            ? const Padding(
-                padding: EdgeInsets.only(
-                  top: kDefaultPadding,
-                ),
-                child: HeaderPost(),
-              )
+            ? const HeaderPost()
             : const SizedBox.shrink();
       case Menu.about:
-        return const Padding(
-          padding: EdgeInsets.only(
-            top: kDefaultPadding,
-          ),
-          child: HeaderAbout(),
-        );
-      case Menu.contact:
-        return const SizedBox.shrink();
+        return const HeaderAbout();
+      case Menu.creator:
+        return const HeaderContact();
     }
   }
 }

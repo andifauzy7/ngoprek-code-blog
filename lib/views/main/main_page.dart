@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ngoprek_code_blog/constants.dart';
+import 'package:ngoprek_code_blog/views/footer/footer.dart';
 import 'package:ngoprek_code_blog/views/header/header.dart';
 import 'package:ngoprek_code_blog/views/header/widgets/header_menu_drawer.dart';
 import 'package:ngoprek_code_blog/views/home/home_page.dart';
@@ -33,7 +34,8 @@ class MainPage extends StatelessWidget {
             Header(),
             SizedBox(height: kDefaultPadding),
             HomePage(),
-            SizedBox(height: kDefaultPadding),
+            SizedBox(height: kDefaultPadding * 2),
+            Footer(),
           ],
         ),
       ),

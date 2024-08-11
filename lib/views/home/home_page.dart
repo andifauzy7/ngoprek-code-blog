@@ -11,27 +11,40 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       constraints: const BoxConstraints(maxWidth: kMaxWidth),
-      child: GridView.builder(
-        itemCount: 9,
-        shrinkWrap: true,
-        primary: false,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: () {
-            if (Responsive.isDesktop(context)) {
-              return 3;
-            }
-            if (Responsive.isTablet(context)) {
-              return 2;
-            }
-            return 1;
-          }(),
-          childAspectRatio: 4 / 5,
-          crossAxisSpacing: kDefaultPadding,
-          mainAxisSpacing: kDefaultPadding,
-        ),
-        itemBuilder: (context, index) => _renderPostCard(
-          context,
-        ),
+      child: Column(
+        children: [
+          GridView.builder(
+            itemCount: 9,
+            shrinkWrap: true,
+            primary: false,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: () {
+                if (Responsive.isDesktop(context)) {
+                  return 3;
+                }
+                if (Responsive.isTablet(context)) {
+                  return 2;
+                }
+                return 1;
+              }(),
+              childAspectRatio: 4 / 5,
+              crossAxisSpacing: kDefaultPadding,
+              mainAxisSpacing: kDefaultPadding,
+            ),
+            itemBuilder: (context, index) => _renderPostCard(
+              context,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: kDefaultPadding * 2,
+            ),
+            child: OutlinedButton(
+              onPressed: () {},
+              child: const Text('Load More'),
+            ),
+          ),
+        ],
       ),
     );
   }

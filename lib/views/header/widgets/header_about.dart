@@ -9,6 +9,7 @@ class HeaderAbout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: const EdgeInsets.only(top: kDefaultPadding),
       padding: const EdgeInsets.all(kDefaultPadding),
       decoration: BoxDecoration(
         color: kPrimaryColor.withOpacity(0.1),
