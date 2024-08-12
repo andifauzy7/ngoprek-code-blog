@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngoprek_code_blog/constants.dart';
 import 'package:ngoprek_code_blog/responsive.dart';
 import 'package:ngoprek_code_blog/views/widgets/app_logo.dart';
+import 'package:ngoprek_code_blog/views/widgets/app_network_image.dart';
 
 class HeaderContact extends StatelessWidget {
   const HeaderContact({super.key});
@@ -42,10 +43,14 @@ Meet Andi Fauzy, a passionate engineer and writer with a love for technology and
 
   List<Widget> _renderContent(BuildContext context) {
     return [
-      const CircleAvatar(
-        radius: 48,
-        backgroundImage: NetworkImage(
-            'https://media.licdn.com/dms/image/C5603AQGhpfJbKBo7GQ/profile-displayphoto-shrink_200_200/0/1632454285381?e=2147483647&v=beta&t=Q3YoZZmwRLsqYoqsSWx8fJ43hpn25OfB9FlCirbd7z0'),
+      const SizedBox(
+        width: 96,
+        height: 96,
+        child: AppNetworkImage(
+          aspectRatio: 1,
+          imageUrl:
+              'https://media.licdn.com/dms/image/C5603AQGhpfJbKBo7GQ/profile-displayphoto-shrink_200_200/0/1632454285381?e=2147483647&v=beta&t=Q3YoZZmwRLsqYoqsSWx8fJ43hpn25OfB9FlCirbd7z0',
+        ),
       ),
       const SizedBox(
         width: kDefaultPadding,

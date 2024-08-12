@@ -21,9 +21,12 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 ListView.builder(
-                  itemCount: 9,
+                  itemCount: dummyPost.length,
                   shrinkWrap: true,
-                  itemBuilder: (c, _) => _renderPostCard(c),
+                  itemBuilder: (c, i) => _renderPostCard(
+                    c,
+                    data: dummyPost[i],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -55,7 +58,10 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _renderPostCard(BuildContext context) {
+  Widget _renderPostCard(
+    BuildContext context, {
+    required Map<String, String> data,
+  }) {
     return Container(
       margin: const EdgeInsets.only(bottom: kDefaultPadding),
       decoration: BoxDecoration(
@@ -65,14 +71,14 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const AppNetworkImage(
+          AppNetworkImage(
             aspectRatio: 2.4,
-            imageUrl:
-                "https://m-cdn.phonearena.com/images/hub/290-wide-two_1200/Android-14-release-date-supported-devices-and-must-know-features.jpg",
+            imageUrl: data['image'] ?? '',
           ),
           Padding(
             padding: const EdgeInsets.all(kDefaultPadding),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -94,7 +100,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: kDefaultPadding * 0.5),
                 Text(
-                  'The Impact of Technology on the Workplace: How Technology is Changing.',
+                  data['title'] ?? '',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
@@ -102,8 +108,8 @@ class HomePage extends StatelessWidget {
                       ),
                 ),
                 const SizedBox(height: kDefaultPadding * 0.5),
-                const Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                Text(
+                  data['description'] ?? '',
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),

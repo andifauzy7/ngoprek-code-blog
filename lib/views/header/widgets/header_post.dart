@@ -12,8 +12,7 @@ class HeaderPost extends StatelessWidget {
       padding: const EdgeInsets.only(top: kDefaultPadding),
       child: AppNetworkImage(
         aspectRatio: 1200 / 450,
-        imageUrl:
-            "https://m-cdn.phonearena.com/images/hub/290-wide-two_1200/Android-14-release-date-supported-devices-and-must-know-features.jpg",
+        imageUrl: dummyPost[3]["image"] ?? '',
         alignment: Alignment.bottomLeft,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -22,7 +21,7 @@ class HeaderPost extends StatelessWidget {
             const AppChip(label: 'Flutter'),
             const SizedBox(height: kDefaultPadding * 0.5),
             Text(
-              'The Impact of Technology on the\nWorkplace: How Technology is Changing.',
+              dummyPost[3]["title"] ?? '',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
