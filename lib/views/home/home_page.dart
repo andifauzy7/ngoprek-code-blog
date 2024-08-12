@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ngoprek_code_blog/constants.dart';
 import 'package:ngoprek_code_blog/responsive.dart';
+import 'package:ngoprek_code_blog/views/home/widgets/home_categories.dart';
 import 'package:ngoprek_code_blog/views/widgets/app_network_image.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       constraints: const BoxConstraints(maxWidth: kMaxWidth),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             flex: 2,
@@ -37,7 +39,15 @@ class HomePage extends StatelessWidget {
           if (!Responsive.isMobile(context))
             const SizedBox(width: kDefaultPadding),
           // Sidebar
-          if (!Responsive.isMobile(context)) const Spacer(),
+          if (!Responsive.isMobile(context))
+            const Expanded(
+              child: Column(
+                children: [
+                  HomeCategories(),
+                  SizedBox(height: kDefaultPadding),
+                ],
+              ),
+            ),
         ],
       ),
     );
