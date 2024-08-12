@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ngoprek_code_blog/constants.dart';
 import 'package:ngoprek_code_blog/responsive.dart';
 import 'package:ngoprek_code_blog/views/home/widgets/home_categories.dart';
+import 'package:ngoprek_code_blog/views/home/widgets/home_recent_post.dart';
 import 'package:ngoprek_code_blog/views/widgets/app_network_image.dart';
 
 class HomePage extends StatelessWidget {
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   HomeCategories(),
                   SizedBox(height: kDefaultPadding),
+                  HomeRecentPost(),
                 ],
               ),
             ),
